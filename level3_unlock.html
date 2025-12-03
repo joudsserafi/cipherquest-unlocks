@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body { background:#111; color:white; font-family:monospace; padding:20px; }
+input, button { padding:10px; border-radius:6px; border:none; margin-top:10px; }
+button { background:#00cc53; color:white; cursor:pointer; }
+</style>
+</head>
+
+<body>
+<h3>Enter Password to Unlock Level 4</h3>
+<input id="pw" type="password" placeholder="Enter password...">
+<button onclick="checkPW()">Unlock</button>
+<p id="msg"></p>
+
+<script>
+function checkPW() {
+  let correct = "SecretKey123";
+  let user = document.getElementById("pw").value;
+
+  if (user === correct) {
+    document.getElementById("msg").innerHTML =
+      `<span style='color:#00e676;'>✓ Access Granted —
+       <a href="https://sites.google.com/view/cipherquest-fc421/level4"
+          target="_parent" style="color:#00e676;">Continue</a></span>`;
+  } else {
+    document.getElementById("msg").innerHTML = "<span style='color:red;'>✖ Incorrect password</span>";
+  }
+}
+</script>
+</body>
+</html>
